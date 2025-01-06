@@ -20,12 +20,12 @@ requirements:
     - {{ compiler("c") }}
     - {{ stdlib("c") }}
   host:
-    - python
+    - python >=3.6
     - setuptools
     - cython
     - pip
   run:
-    - python
+    - python >=3.6
     - numpy
     - scipy
 
@@ -35,7 +35,7 @@ test:
   commands:
     - pip check
   requires:
-    - python
+    - python >=3.6
     - pip
 
 about:

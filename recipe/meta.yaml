@@ -1,6 +1,5 @@
 {% set name = "flt" %}
 {% set version = "2022.10.17" %}
-{% set python_min = "3.6" %}
 
 package:
   name: {{ name|lower }}
@@ -11,7 +10,7 @@ source:
   sha256: 5567f70d74efde619bc70212b4735c03b75292678fd5bd4a3b1b07ebafbe3df4
 
 build:
-  skip: true  # [py<39]
+  skip: true  # [py<36]
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 3
 
@@ -20,12 +19,12 @@ requirements:
     - {{ compiler("c") }}
     - {{ stdlib("c") }}
   host:
-    - python >=3.6
+    - python
     - setuptools
     - cython
     - pip
   run:
-    - python >=3.6
+    - python
     - numpy
     - scipy
 
@@ -35,7 +34,7 @@ test:
   commands:
     - pip check
   requires:
-    - python >=3.6
+    - python
     - pip
 
 about:

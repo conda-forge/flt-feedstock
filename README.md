@@ -331,4 +331,6 @@ Feedstock Maintainers
 =====================
 
 * [@Saransh-cpp](https://github.com/Saransh-cpp/)
+* [@ntessore](https://github.com/ntessore/)
+* [@paddyroddy](https://github.com/paddyroddy/)
 

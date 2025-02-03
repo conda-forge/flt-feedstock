@@ -10,7 +10,6 @@ source:
   sha256: 359e675171975d011bd4657527e813b2c482607b341229d8d1addfb1c48c7ef9
 
 build:
-  skip: true  # [py<39]
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
@@ -20,17 +19,18 @@ requirements:
     - {{ stdlib("c") }}
   host:
     - python
-    - setuptools
+    - setuptools >=74.1
+    - setuptools-scm >=8
     - cython
     - pip
   run:
     - python
     - numpy
-    - scipy
 
 test:
   imports:
     - flt
+    - flt.generic
   commands:
     - pip check
   requires:

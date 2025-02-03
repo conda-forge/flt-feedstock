@@ -1,5 +1,5 @@
 {% set name = "flt" %}
-{% set version = "2022.10.17" %}
+{% set version = "2025.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,11 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/flt-{{ version }}.tar.gz
-  sha256: 5567f70d74efde619bc70212b4735c03b75292678fd5bd4a3b1b07ebafbe3df4
+  sha256: 359e675171975d011bd4657527e813b2c482607b341229d8d1addfb1c48c7ef9
 
 build:
-  skip: true  # [py<39]
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 3
+  number: 0
 
 requirements:
   build:
@@ -20,17 +19,18 @@ requirements:
     - {{ stdlib("c") }}
   host:
     - python
-    - setuptools
+    - setuptools >=74.1
+    - setuptools-scm >=8
     - cython
     - pip
   run:
     - python
     - numpy
-    - scipy
 
 test:
   imports:
     - flt
+    - flt.generic
   commands:
     - pip check
   requires:

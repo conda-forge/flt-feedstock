@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: flt
-  version: "2025.2.1"
+  version: "2026.1"
 
 package:
   name: ${{ name|lower }}
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/flt-${{ version }}.tar.gz
-  sha256: a028bf741335f11b8f906bbcdccbefc015f88d6e35f5c1b3b197a4cd29c5412c
+  sha256: 4bf2818d4a9137f5f715fd2ff13acfbf0175639373155cd89ea2b788edf00093
 
 build:
-  number: 1
+  number: 0
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
